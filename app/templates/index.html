@@ -4,15 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Steam Panopticon</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap');
+    </style>
 </head>
 <body>
 
     <header class="navbar">
         <div class="logo-container">
             <div class="logo-icon">
-                <i class="fas fa-eye"></i> </div>
+                <img src="{{ url_for('static', filename='Steam_Panopticon_Logo.svg') }}" alt="Logo Steam Panopticon" class="custom-logo">
+            </div>
             <h1>Steam Panopticon</h1>
         </div>
 
@@ -41,6 +45,6 @@
         </section>
     </main>
 
-    <script src="script.js"></script>
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
 </body>
 </html>

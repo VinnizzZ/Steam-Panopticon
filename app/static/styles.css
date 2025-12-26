@@ -1,14 +1,15 @@
 :root {
-    --bg-color: #1b2838;
-    --header-color: #171a21;
-    --card-bg: #2a475e;
-    --accent-blue: #10a3de;
+    --bg-color: #172536;
+    --header-color: #1E3040;
+    --card-bg: #1E3040;
+    --accent-blue: #1999FF;
     --text-white: #ffffff;
+    --back-menu: #3C4854;
 }
 
 body {
     margin: 0;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Play', sans-serif;
     background-color: var(--bg-color);
     color: var(--text-white);
 }
@@ -29,13 +30,20 @@ body {
 }
 
 .logo-icon {
-    background: linear-gradient(to bottom, #10a3de, #000);
-    width: 40px;
-    height: 40px;
+    width: 45px;
+    height: 45px;
     border-radius: 50%;
+    overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
+    background: linear-gradient(to bottom, #10a3de, #000);
+}
+
+.custom-logo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .logo-container h1 {
@@ -51,7 +59,7 @@ body {
 }
 
 #search-input {
-    background-color: #316282;
+    background-color: var(--back-menu);
     border: none;
     padding: 8px 12px;
     color: white;
