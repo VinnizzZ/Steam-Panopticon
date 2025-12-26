@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Steam Panopticon</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo-container">
+            <div class="logo-icon">
+                <i class="fas fa-eye"></i> </div>
+            <h1>Steam Panopticon</h1>
+        </div>
+
+        <div class="search-container">
+            <button id="search-btn"><i class="fas fa-search"></i></button>
+            <input type="text" id="search-input" placeholder="Buscar...">
+        </div>
+
+        <nav class="nav-links">
+            <button onclick="location.href='/noticias'">Noticias</button>
+            <button onclick="location.href='/descontos'">Descontos</button>
+            <button onclick="location.href='/jogos'">Jogos</button>
+            <button onclick="location.href='/usuarios'">Usuarios</button>
+        </nav>
+    </header>
+
+    <main class="content-wrapper">
+        <section class="card-section">
+            <h2>Jogos mais jogados</h2>
+            <div class="content-box"></div>
+        </section>
+
+        <section class="card-section">
+            <h2>Lançamentos Populares</h2>
+            <div class="content-box"></div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+:root {
+    --bg-color: #1b2838;
+    --header-color: #171a21;
+    --card-bg: #2a475e;
+    --accent-blue: #10a3de;
+    --text-white: #ffffff;
+}
+
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-white);
+}
+
+/* Navbar */
+.navbar {
+    background-color: var(--header-color);
+    display: flex;
+    align-items: center;
+    padding: 15px 50px;
+    justify-content: space-between;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-icon {
+    background: linear-gradient(to bottom, #10a3de, #000);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-container h1 {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+/* Barra de Busca */
+.search-container {
+    display: flex;
+    flex-grow: 0.5;
+    max-width: 400px;
+}
+
+#search-input {
+    background-color: #316282;
+    border: none;
+    padding: 8px 12px;
+    color: white;
+    width: 100%;
+}
+
+#search-btn {
+    background-color: var(--accent-blue);
+    border: none;
+    color: white;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+#search-btn:hover {
+    background-color: #0d8bc0;
+}
+
+/* Botões de Navegação */
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links button {
+    background: none;
+    border: none;
+    color: #c6d4df;
+    font-size: 16px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.nav-links button:hover {
+    color: white;
+}
+
+/* Conteúdo Principal */
+.content-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 50px;
+}
+
+.card-section {
+    width: 450px;
+}
+
+.card-section h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.content-box {
+    background-color: var(--card-bg);
+    height: 500px;
+    border-radius: 4px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}

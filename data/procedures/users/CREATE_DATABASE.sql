@@ -1,0 +1,4 @@
+CREATE OR ALTER PROCEDURE create_database
+AS
+BEGIN
+    CREATE TABLE
