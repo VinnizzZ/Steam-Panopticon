@@ -37,7 +37,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(to bottom, #10a3de, #000);
 }
 
 .custom-logo {
