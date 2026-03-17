@@ -5,6 +5,7 @@ from sqlalchemy.orm import sessionmaker
 import os
 from dotenv import load_dotenv
 import logging
+import data
 
 # Configuração de logging
 logging.basicConfig(
