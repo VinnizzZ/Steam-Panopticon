@@ -39,6 +39,7 @@ def get_appids():
     '''
     Acessa a API da steam e cadastra todos os AppIds
     '''
+    bloco = 'get_appids'
     logging.info('Iniciando processo de obtenção de AppIds', )
     last_appid = 0
     arquivo = 'apps_data.csv'
@@ -72,7 +73,7 @@ def get_appids():
             time.sleep(1)
 
         except Exception as e:
-            logging.error(f'Erro na request - {e}')
+            logging.error(f'Erro na request - {e} - Bloco: {bloco}')
             break
 
 def pegar_last_appid():
@@ -95,6 +96,7 @@ def atualiza_appids():
     '''
     Atualiza a lista de AppIds a partir do último app na lista
     '''
+    bloco = 'atualiza_appids'
     arquivo = 'apps_data.csv'
     session = requests.Session()
     estado_arquivo = os.path.isfile(arquivo)
@@ -116,7 +118,7 @@ def atualiza_appids():
             writer.writerows(apps)
 
     except Exception as e:
-        logging.error(f'Erro na request - {e}')
+        logging.error(f'Erro na request - {e} - Bloco: {bloco}')
 
 #########################################################
 #            Funções de contagem de players             #
@@ -126,10 +128,9 @@ def get_top_played():
     '''
     Busca os top 100 jogos com maior número de players simultâneos
     '''
+    bloco = 'get_top_played'
     arquivo = 'concurrent_player_rank.csv'
-    arquivo_appids = 'apps_data.csv'
     session = requests.Session()
-    estado_arquivo = os.path.isfile(arquivo)
 
     try:
         response = session.get(TOP_PLAYED_URL)
@@ -144,17 +145,15 @@ def get_top_played():
             print(nome)
             i['name'] = nome
 
-        with open(arquivo, 'a', newline='', encoding='utf-8') as f:
+        with open(arquivo, 'w', newline='', encoding='utf-8') as f:
             fieldnames = ['rank', 'appid', 'last_week_rank', 'peak_in_game', 'name']
             writer = csv.DictWriter(f, fieldnames=fieldnames)
 
-            if not estado_arquivo:
-                    writer.writeheader()
-                    estado_arquivo = True
+            writer.writeheader()
             writer.writerows(apps)
 
     except Exception as e:
-        logging.error(f'Erro na request - {e}')
+        logging.error(f'Erro na request - {e} - Bloco: {bloco}')
         
 #########################################################
 #                 Funções auxiliares                    #
@@ -173,6 +172,7 @@ def carregar_ids(arquivo):
 
 def procurar_nome(appid):
     arquivo = 'apps_data.csv'
+    appid = str(appid)
 
     with open(arquivo, 'r', encoding='utf-8') as f:
         leitor = csv.DictReader(f)
